@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:football_news/menu.dart';
+import 'package:football_news/screens/menu.dart';
+import 'package:football_news/screens/newslist_form.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -28,6 +29,12 @@ class LeftDrawer extends StatelessWidget {
               Padding(padding: EdgeInsets.all(10)),
               Text("Seluruh berita sepak bola terkini di sini!",
               //TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ],
           ),
@@ -54,9 +61,28 @@ class LeftDrawer extends StatelessWidget {
               TODO: Buatlah routing ke NewsFormPage di sini,
               setelah halaman NewsFormPage sudah dibuat.
               */
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NewsFormPage(),
+                ),
+              );
             },
           ),
           // TODO: Buat ListTile baru untuk ke halaman melihat news
+          ListTile(
+            leading: const Icon(Icons.newspaper),
+            title: const Text('See News'),
+            onTap: () {
+              // Misal: kembali ke home (MyHomePage) untuk melihat news
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyHomePage(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
