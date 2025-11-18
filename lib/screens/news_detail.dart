@@ -27,7 +27,7 @@ class NewsDetailPage extends StatelessWidget {
           children: [
             // Thumbnail image
             // final thumbnail = news.thumbnail;
-            if ((news.thumbnail??"").isNotEmpty)
+            if ((news.thumbnail??"").isNotEmpty || news.thumbnail != "")
               Image.network(
                 'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(news.thumbnail??"")}',
                 width: double.infinity,

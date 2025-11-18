@@ -63,7 +63,7 @@ class NewsEntryCard extends StatelessWidget {
                 // Content preview
                 Text(
                   news.content.length > 100
-                      ? '${news.content.substring(0, 100)}...'
+                      ? '${(news.content).substring(0, 100)}...'
                       : news.content,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

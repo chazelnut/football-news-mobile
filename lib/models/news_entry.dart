@@ -32,14 +32,14 @@ class NewsEntry {
     });
 
     factory NewsEntry.fromJson(Map<String, dynamic> json) => NewsEntry(
-        id: json["id"],
+        id: json["id"] ?? "",
         title: json["title"] ?? "",
         content: json["content"] ?? "",
-        category: json["category"],
+        category: json["category"] ?? "",
         thumbnail: json["thumbnail"] ?? "",
-        newsViews: json["news_views"],
+        newsViews: json["news_views"] ?? 0,
         createdAt: DateTime.parse(json["created_at"]),
-        isFeatured: json["is_featured"],
+        isFeatured: json["is_featured"] ?? false,
         userId: json["user_id"] ?? 0,
     );
 
